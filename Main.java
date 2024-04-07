@@ -22,6 +22,8 @@ public class Main extends JFrame {
         cards.add(new LayeredPanel(), "LayeredPane");
         cards.add(new InternalFramePanel("Violino"), "InternalFrame");
         cards.add(new GridBagLayoutPanel(), "GridBagLayout");
+        cards.add(new InstrumentosEditorPanel(), "EditorInstrumentos");
+
 
         getContentPane().setLayout(new BorderLayout());
         getContentPane().add(cards, BorderLayout.CENTER);
@@ -35,7 +37,8 @@ public class Main extends JFrame {
         addNavigationButton(toolBar, "ToolBar", "Pesquisa");
         addNavigationButton(toolBar, "LayeredPane", "Galeria");
         addNavigationButton(toolBar, "InternalFrame", "Violino");
-        addNavigationButton(toolBar, "GridBagLayout", "Intrumentos Clássicos");
+        addNavigationButton(toolBar, "GridBagLayout", "Clássicos");
+        addNavigationButton(toolBar, "EditorInstrumentos", "Funções");
 
         getContentPane().add(toolBar, BorderLayout.NORTH);
     }
