@@ -15,4 +15,8 @@ O projeto precisava incluir os seguintes componentes:
 09. Internal Frames
 10. GridBagLayout
 
+<<<<<<< HEAD
 Onde os 5 primeiros foi feito um estudo e relatório específico para cada um dos componentes e na segunda parte foi proposto mais 5 componentes e o objetivo era construir uma interface unindo-os com o tema proposto.
+=======
+Onde os 5 primeiros foi feito um estudo e relatório específico para cada um dos componentes e na segunda parte foi proposto mais 5 componentes e o objetivo era construir uma interface unindo-os com o tema proposto.
+>>>>>>> 131b1093f39657f84083cbd8dc491830b4317d69
