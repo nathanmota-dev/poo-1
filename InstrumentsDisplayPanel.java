@@ -1,9 +1,9 @@
 import javax.swing.*;
 import java.awt.*;
 
-public class LayeredPanel extends JLayeredPane {
+public class InstrumentsDisplayPanel extends JLayeredPane {
 
-    public LayeredPanel() {
+    public InstrumentsDisplayPanel() {
         setPreferredSize(new Dimension(600, 400));
 
         // Saxofone

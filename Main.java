@@ -4,8 +4,21 @@ import java.awt.*;
 public class Main extends JFrame {
     private CardLayout cardLayout = new CardLayout();
     private JPanel cards = new JPanel(cardLayout);
+    private DataLoader dataLoader1;
+    private DataLoader dataLoader2;
+    private DataLoader dataLoader3;	
+    private DataLoader dataLoader4;
 
     public Main() {
+        dataLoader1 = new FileDataLoader("instrumentos.txt");
+        dataLoader2 = new FileDataLoader("detalhesHistoricos.txt");
+        dataLoader3 = new FileDataLoader("violino.txt");
+        dataLoader4 = new FileDataLoader("classicos.txt");
+        dataLoader1.loadData(); // Carrega os dados
+        dataLoader2.loadData(); 
+        dataLoader3.loadData(); 
+        dataLoader4.loadData();
+      
         setTitle("Música Clássica");
         setSize(800, 600);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -15,14 +28,14 @@ public class Main extends JFrame {
 
     private void initComponents() {
         // Adiciona os cartões/painéis
-        cards.add(new PainelInstrumentos(), "Instrumentos");
-        cards.add(new TextAreaPanel(), "TextArea");
-        cards.add(new ToggleButtonPanel(), "ToggleButton");
-        cards.add(new ToolBarPanel(), "ToolBar");
-        cards.add(new LayeredPanel(), "LayeredPane");
-        cards.add(new InternalFramePanel("Violino"), "InternalFrame");
-        cards.add(new GridBagLayoutPanel(), "GridBagLayout");
-        cards.add(new InstrumentosEditorPanel(), "EditorInstrumentos");
+        cards.add(new InstrumentsInfoPanel(dataLoader1), "Instrumentos");
+        cards.add(new UserFeedbackPanel(), "TextArea");
+        cards.add(new DetailsToggleButtonPanel(dataLoader2), "ToggleButton");
+        cards.add(new MusicStylesToolbar(), "ToolBar");
+        cards.add(new InstrumentsDisplayPanel(), "LayeredPane");
+        cards.add(new InstrumentDetailFrame("Violino", dataLoader3), "InternalFrame");
+        cards.add(new ClassicInstrumentsPanel(dataLoader4), "GridBagLayout");
+        cards.add(new InstrumentsManagementPanel(), "EditorInstrumentos");
 
 
         getContentPane().setLayout(new BorderLayout());
@@ -47,13 +60,9 @@ public class Main extends JFrame {
         JButton button = new JButton(buttonText);
         button.addActionListener(e -> cardLayout.show(cards, command));
         toolBar.add(button);
-    }
+    }    
 
-    private void toggleDescription() {
-        System.out.println("ToggleButton acionado. Implemente a lógica conforme necessário.");
-    }
-
-    public static void main(String[] args) {
+    public static void main(String[] args) {        
         SwingUtilities.invokeLater(() -> new Main().setVisible(true));
     }
 }

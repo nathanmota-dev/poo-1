@@ -2,8 +2,8 @@ import javax.swing.*;
 import javax.swing.table.TableColumn;
 import java.awt.BorderLayout;
 
-public class InstrumentosEditorPanel extends JPanel {
-    public InstrumentosEditorPanel() {
+public class InstrumentsManagementPanel extends JPanel {
+    public InstrumentsManagementPanel() {
         setLayout(new BorderLayout());
 
         String[] columnNames = {"Instrumento", "Descrição"};

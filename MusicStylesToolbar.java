@@ -2,9 +2,9 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class ToolBarPanel extends JToolBar {
+public class MusicStylesToolbar extends JToolBar {
 
-    public ToolBarPanel() {
+    public MusicStylesToolbar() {
         super("Ferramentas Musicais");
         setFloatable(false);
         addComponents();
